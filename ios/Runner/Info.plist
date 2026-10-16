@@ -8,6 +8,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 
+	<key>CFBundleDisplayName</key>
+	<string>Ideal Traders</string>
+
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 
@@ -18,7 +21,7 @@
 	<string>6.0</string>
 
 	<key>CFBundleName</key>
-	<string>Active Ecommerce App</string>
+	<string>Ideal Traders</string>
 
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
@@ -58,7 +61,7 @@
     <string>492382936fd7b7ff5078571669082751</string>
 
     <key>FacebookDisplayName</key>
-    <string>Active Ecommerce</string>
+    <string>Ideal Traders</string>
 
 	<key>LSApplicationCategoryType</key>
 	<string></string>
@@ -98,7 +101,7 @@
 	<string>User can choose date from calender</string>
 
 	<key>NSCameraUsageDescription</key>
-	<string>User can upload and change her profile picture from Camera</string>
+	<string>User can upload and change profile picture from Camera</string>
 
 	<key>NSMicrophoneUsageDescription</key>
 	<string>User can send voice messages and record videos</string>
@@ -122,7 +125,7 @@
 	<string>This app will use your motion data for your active tasks</string>
 
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>User can upload and change her profile picture from PhotoLibrary</string>
+	<string>User can upload and change profile picture from PhotoLibrary</string>
 
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>User can send message or search data by voice</string>
