@@ -63,9 +63,3 @@
 
 # ── App-specific classes ─────────────────────────────────────
 -keep class co.idealtraders.** { *; }
--keep class com.active_ecommerce_cms_demo_app.** { *; }
--keep class **.data_model.** { *; }
--keep class **.models.** { *; }
--keep class com.shared_value.** { *; }
--keep class com.store_box.** { *; }
-

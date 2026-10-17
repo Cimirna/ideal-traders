@@ -5,7 +5,6 @@ import 'package:active_ecommerce_cms_demo_app/middlewares/auth_middleware.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/auth/login.dart';
 import 'package:active_ecommerce_cms_demo_app/screens/filter.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
@@ -63,27 +62,19 @@ import 'single_banner/photo_provider.dart';
 void main() async {
   runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
-    if (!kIsWeb) {
-      try {
-        await Firebase.initializeApp();
-      } catch (e) {
-        print("Firebase init error: $e");
-      }
-    }
     try {
-      await StoreBox.init();
+      await Firebase.initializeApp();
     } catch (e) {
-      print("StoreBox init error: $e");
+      print("Firebase initialization error: $e");
     }
-    if (!kIsWeb) {
-      try {
-        await FlutterDownloader.initialize(
-          debug: true,
-          ignoreSsl: true,
-        );
-      } catch (e) {
-        print("FlutterDownloader init error: $e");
-      }
+    await StoreBox.init();
+    try {
+      await FlutterDownloader.initialize(
+        debug: true,
+        ignoreSsl: true,
+      );
+    } catch (e) {
+      print("FlutterDownloader initialization error: $e");
     }
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,

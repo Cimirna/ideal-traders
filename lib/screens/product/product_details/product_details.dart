@@ -1801,7 +1801,7 @@ class _ProductDetailsState extends State<ProductDetails>
               width: 75,
               child: Text(
                 choiceOptions[choiceOptionsIndex].title,
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
               ),
             ),
           ),
@@ -1874,7 +1874,7 @@ class _ProductDetailsState extends State<ProductDetails>
                     style: TextStyle(
                       color: isSelected
                           ? MyTheme.accent_color
-                          : Colors.black,
+                          : Color.fromRGBO(80, 80, 80, 1),
                       fontSize: 12.0,
                       fontWeight: FontWeight.w600,
                     ),
@@ -1900,7 +1900,7 @@ class _ProductDetailsState extends State<ProductDetails>
             width: 75,
             child: Text(
               AppLocalizations.of(context)!.color_ucf,
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Color.fromRGBO(153, 153, 153, 1)),
             ),
           ),
         ),
@@ -2431,7 +2431,7 @@ class _ProductDetailsState extends State<ProductDetails>
                   child: Text(
                     AppLocalizations.of(context)!.brand_ucf,
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Color(0xff6B7377),
                       fontSize: 10,
                       fontFamily: 'Public Sans',
                     ),

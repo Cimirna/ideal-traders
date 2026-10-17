@@ -20,12 +20,8 @@ class _SplashScreenState extends State<SplashScreen> {
   ));
 
   Future<void> _initPackageInfo() async {
-    try {
-      final PackageInfo info = await PackageInfo.fromPlatform();
-      _packageInfoNotifier.value = info;
-    } catch (e) {
-      print("PackageInfo error: $e");
-    }
+    final PackageInfo info = await PackageInfo.fromPlatform();
+    _packageInfoNotifier.value = info;
   }
 
   @override

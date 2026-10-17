@@ -57,10 +57,31 @@ class HomeCarouselSlider extends StatelessWidget {
                       width: double.infinity,
                       child: InkWell(
                         onTap: () {
-                          var url =
-                              i.url?.split(AppConfig.DOMAIN_PATH).last ?? "";
-                          print(url);
-                          GoRouter.of(context).push(url);
+                          var rawUrl = i.url ?? "";
+                          if (rawUrl.isEmpty) return;
+
+                          // Prevent launching Google Play links on iOS (Apple Guideline 2.3.10)
+                          if (rawUrl.contains("play.google.com") ||
+                              rawUrl.contains("market://") ||
+                              rawUrl.contains("bit.ly")) {
+                            return;
+                          }
+
+                          try {
+                            final Uri uri = Uri.parse(rawUrl);
+                            if (uri.host.isEmpty ||
+                                uri.host.contains(AppConfig.DOMAIN_PATH)) {
+                              String goPath = uri.path;
+                              if (uri.hasQuery) {
+                                goPath += "?${uri.query}";
+                              }
+                              if (goPath.isNotEmpty && goPath != "/") {
+                                GoRouter.of(context).push(goPath);
+                              }
+                            }
+                          } catch (e) {
+                            print("Error navigating from slider: $e");
+                          }
                         },
                         child: AIZImage.radiusImage(i.photo, 0),
                       ),
