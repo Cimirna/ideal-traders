@@ -19,8 +19,8 @@ class AppConfig {
   static String mobile_app_code = "en";
   static bool app_language_rtl = false;
   //configure this
-  static const bool HTTPS = true; //if you are using localhost , set this to false
-  static const DOMAIN_PATH = "idealtraders.co";//use only domain name without http:// or https://
+  static const bool HTTPS = true; // if you are using localhost , set this to false
+  static const DOMAIN_PATH = "idealtraders.co"; // use only domain name without http:// or https://
   //do not configure these below
   static const String API_ENDPATH = "api/v2";
   static const String PROTOCOL = HTTPS ? "https://" : "http://";

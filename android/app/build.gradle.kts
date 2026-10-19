@@ -11,24 +11,20 @@ plugins {
 
 android {
     namespace = "co.idealtraders.userapp"
-    compileSdk = 35
-    ndkVersion = "28.0.13004108"
+    compileSdk = 36
+    ndkVersion = "30.0.16138531"
 
     compileOptions {
-        // Enable core library desugaring and use Java 21
+        // Enable core library desugaring and use Java 17
         isCoreLibraryDesugaringEnabled = true
-        sourceCompatibility = JavaVersion.toVersion(21)
-        targetCompatibility = JavaVersion.toVersion(21)
-    }
-
-    kotlinOptions {
-        jvmTarget = "21"
+        sourceCompatibility = JavaVersion.toVersion(17)
+        targetCompatibility = JavaVersion.toVersion(17)
     }
 
     defaultConfig {
         applicationId = "co.idealtraders.userapp"
-        minSdk = 23
-        targetSdk = 35
+        minSdk = flutter.minSdkVersion
+        targetSdk = 36
         versionCode = flutter.versionCode
         versionName = flutter.versionName
         multiDexEnabled = true
@@ -85,4 +81,20 @@ dependencies {
 
     // Enable core library desugaring
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+}
+
+configurations.all {
+    resolutionStrategy {
+        force("androidx.browser:browser:1.8.0")
+        force("androidx.activity:activity-ktx:1.9.3")
+        force("androidx.activity:activity:1.9.3")
+        force("androidx.core:core-ktx:1.15.0")
+        force("androidx.core:core:1.15.0")
+    }
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    }
 }
