@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:active_ecommerce_cms_demo_app/l10n/app_localizations.dart';
@@ -61,10 +62,12 @@ class HomeCarouselSlider extends StatelessWidget {
                           if (rawUrl.isEmpty) return;
 
                           // Prevent launching Google Play links on iOS (Apple Guideline 2.3.10)
-                          if (rawUrl.contains("play.google.com") ||
-                              rawUrl.contains("market://") ||
-                              rawUrl.contains("bit.ly")) {
-                            return;
+                          if (Platform.isIOS) {
+                            if (rawUrl.contains("play.google.com") ||
+                                rawUrl.contains("market://") ||
+                                rawUrl.contains("bit.ly")) {
+                              return;
+                            }
                           }
 
                           try {

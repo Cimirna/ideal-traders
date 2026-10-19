@@ -8,6 +8,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 
+	<key>CFBundleDisplayName</key>
+	<string>Ideal Traders</string>
+
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 
@@ -37,6 +40,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.620463100599-ddb91en0ain1g4lim7ub25ced6lm6flr</string>
+				<string>fb2046123582873767</string>
 			</array>
 		</dict>
 	</array>
@@ -50,11 +54,24 @@
 	<key>FDMaximumConcurrentTasks</key>
 	<integer>5</integer>
 
+	<key>FacebookAppID</key>
+    <string>2046123582873767</string>
+
+    <key>FacebookClientToken</key>
+    <string>492382936fd7b7ff5078571669082751</string>
+
+    <key>FacebookDisplayName</key>
+    <string>Ideal Traders</string>
+
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
 		<string>sms</string>
 		<string>tel</string>
 		<string>instagram-stories</string>
@@ -79,6 +96,12 @@
 	<key>NSCameraUsageDescription</key>
 	<string>User can upload and change profile picture or product return photos from Camera</string>
 
+	<key>NSMicrophoneUsageDescription</key>
+	<string>User can send voice messages and record videos</string>
+
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>User can set delivery address using phone location</string>
+
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>User can set delivery address using phone location</string>
 
@@ -87,6 +110,12 @@
 
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>User can upload and change profile picture or product return photos from Photo Library</string>
+
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 
 	<key>UIBackgroundModes</key>
 	<array>
